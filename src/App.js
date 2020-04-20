@@ -1,12 +1,17 @@
-import React,{Fragment} from 'react';
+import React,{Fragment,useEffect} from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import India from './components/India';
 import WorldStats from './components/WorldStats';
-
+import ReactGA from 'react-ga';
 
 
 function App() {
+
+  useEffect(() => {
+    ReactGa.initialize('UA-164026859');
+    ReactGA.pageview('/');
+  });
   return (
    <Router>
     <Fragment>
