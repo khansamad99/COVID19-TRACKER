@@ -19,7 +19,10 @@ const WorldStats = () => {
 
     const date = new Date(parseInt(latest.updated));
     const lastUpdated = date.toString();
-
+    var x=latest.cases;
+    var y=latest.recovered;
+    var per=(y/x)*100;
+    var n=per.toFixed(2);
     return (
     <Fragment>
         <h1 className="text-center">COVID-19 TRACKER INDIA</h1>
@@ -57,9 +60,12 @@ const WorldStats = () => {
               <Card.Text>
                 {latest.recovered}
               </Card.Text>
+              <Card.Text>
+                {n}% People Recovered
+              </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small text="white">Last Updated {lastUpdated}</small>
+              <small text="white"> Last Updated {lastUpdated}</small>
             </Card.Footer>
           </Card>
          </CardDeck>
